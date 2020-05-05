@@ -33,10 +33,11 @@ Contact me to make contributions.
 
  ## Tests
 Run "npm test"
+<img src="Develop\assets\tests.png">
 
  ## Questions
   ![GitHub Profile Pic](https://avatars.githubusercontent.com/TLGeorge)
-      
+View full functionality at the following url!
     
  ## Email
 TaneishaLG@gmail.com
