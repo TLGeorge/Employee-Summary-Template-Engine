@@ -96,7 +96,7 @@ const addEngineer = () => {
         },
         {
             type: "input",
-            name: "GitHub Username",
+            name: "GitHubUsername",
             message: "Please enter the engineer's GitHub Username."
         }
     ]).then(addEngi => {

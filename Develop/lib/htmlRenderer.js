@@ -25,30 +25,30 @@ const render = employees => {
 
 const renderManager = manager => {
   let template = fs.readFileSync(path.resolve(templatesDir, "manager.html"), "utf8");
-  template = replacePlaceholders(template, "name", manager.getName());
+  template = replacePlaceholders(template, "Name", manager.getName());
   template = replacePlaceholders(template, "role", manager.getRole());
-  template = replacePlaceholders(template, "email", manager.getEmail());
-  template = replacePlaceholders(template, "id", manager.getId());
+  template = replacePlaceholders(template, "Email", manager.getEmail());
+  template = replacePlaceholders(template, "ID", manager.getId());
   template = replacePlaceholders(template, "officeNumber", manager.getOfficeNumber());
   return template;
 };
 
 const renderEngineer = engineer => {
   let template = fs.readFileSync(path.resolve(templatesDir, "engineer.html"), "utf8");
-  template = replacePlaceholders(template, "name", engineer.getName());
+  template = replacePlaceholders(template, "Name", engineer.getName());
   template = replacePlaceholders(template, "role", engineer.getRole());
-  template = replacePlaceholders(template, "email", engineer.getEmail());
-  template = replacePlaceholders(template, "id", engineer.getId());
-  template = replacePlaceholders(template, "github", engineer.getGithub());
+  template = replacePlaceholders(template, "Email", engineer.getEmail());
+  template = replacePlaceholders(template, "ID", engineer.getId());
+  template = replacePlaceholders(template, "GitHubUsername", engineer.getGithub());
   return template;
 };
 
 const renderIntern = intern => {
   let template = fs.readFileSync(path.resolve(templatesDir, "intern.html"), "utf8");
-  template = replacePlaceholders(template, "name", intern.getName());
+  template = replacePlaceholders(template, "Name", intern.getName());
   template = replacePlaceholders(template, "role", intern.getRole());
-  template = replacePlaceholders(template, "email", intern.getEmail());
-  template = replacePlaceholders(template, "id", intern.getId());
+  template = replacePlaceholders(template, "Email", intern.getEmail());
+  template = replacePlaceholders(template, "ID", intern.getId());
   template = replacePlaceholders(template, "school", intern.getSchool());
   return template;
 };
