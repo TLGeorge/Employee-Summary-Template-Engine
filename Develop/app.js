@@ -54,17 +54,17 @@ const managerInfo = [
 const engineerInfo = [
     {
         type: "input",
-        name: "Name",
+        name: "name",
         message: "Please enter the employee's name."
     },
     {
         type: "input",
-        name: "ID",
+        name: "id",
         message: "Please enter the employee's ID."
     },
     {
         type: "input",
-        name: "Email",
+        name: "email",
         message: "Please enter the employee's email address."
     },
     {
@@ -78,22 +78,22 @@ const engineerInfo = [
 const internInfo = [
     {
         type: "input",
-        name: "Name",
+        name: "name",
         message: "Please enter the employee's name."
     },
     {
         type: "input",
-        name: "ID",
+        name: "id",
         message: "Please enter the employee's ID."
     },
     {
         type: "input",
-        name: "Email",
+        name: "email",
         message: "Please enter the employee's email address."
     },
     {
         type: "input",
-        name: "School",
+        name: "school",
         message: "Please enter the intern's school."
     }
 ]
@@ -127,7 +127,7 @@ function addManager() {
 // Ask engineer questions and create engineer
 function addEngineer() {
     inquirer.prompt(engineerInfo).then(function (answers) {
-        const newEng = new Engineer(answers.name, answers.ID, answers.Email, answers.github);
+        const newEng = new Engineer(answers.name, answers.id, answers.email, answers.github);
         employeeList.push(newEng);
         init();
     })
@@ -136,7 +136,7 @@ function addEngineer() {
 // Ask intern questions and create intern
 function addIntern() {
     inquirer.prompt(internInfo).then(function (answers) {
-        const newInt = new Intern(answers.name, answers.ID, answers.Email, answers.School);
+        const newInt = new Intern(answers.name, answers.id, answers.email, answers.school);
         employeeList.push(newInt);
         init();
     })
