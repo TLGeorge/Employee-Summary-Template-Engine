@@ -1,9 +1,10 @@
 // Dependencies needed, Link required file paths for classes
 const inquirer = require("inquirer");
 const path = require("path");
-const fs = require("fs"); const manager = require("./lib/Manager");
-const engineer = require("./lib/Engineer");
-const intern = require("./lib/Intern");
+const fs = require("fs");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
@@ -21,7 +22,7 @@ const roleInquiry = [
         type: "list",
         name: "Role",
         message: "Please choose the Employee's role to be added.",
-        choices: ["Manager", "Engineer", "Intern"]
+        choices: ["Manager", "Engineer", "Intern", "Finish"]
     }
 ]
 
@@ -29,22 +30,22 @@ const roleInquiry = [
 const managerInfo = [
     {
         type: "input",
-        name: "Name",
+        name: "name",
         message: "Please enter the employee's name."
     },
     {
         type: "input",
-        name: "ID",
+        name: "id",
         message: "Please enter the employee's ID."
     },
     {
         type: "input",
-        name: "Email",
+        name: "email",
         message: "Please enter the employee's email address."
     },
     {
         type: "input",
-        name: "OfficeNumber",
+        name: "officenumber",
         message: "Please enter the manager's office number."
     },
 ]
@@ -117,8 +118,8 @@ const init = () => {
 // Ask Manager questions and create manager
 function addManager() {
     inquirer.prompt(managerInfo).then(function (answers) {
-        const newMgmt = new Manager(answers.name, answers.ID, answers.Email, answers.OfficeNumber);
-        employeeList.push(newManager);
+        const newMgmt = new Manager(answers.name, answers.id, answers.email, answers.officenumber);
+        employeeList.push(newMgmt);
         init();
     })
 };
@@ -142,8 +143,8 @@ function addIntern() {
 };
 
 
-function buildTeam() {
-    fs.writeFile(outputPath, render(teamMembers), function (err) {
+function displayTeam(teamMembers) {
+    fs.writeFile(outputPath, teamMembers, function (err) {
         if (err) {
             console.log(err);
         }
