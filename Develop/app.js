@@ -104,10 +104,10 @@ const init = () => {
         if (answers.Role === "Manager") {
             addManager();
         }
-        else if (answers.roleInquiry === "Engineer") {
+        else if (answers.Role === "Engineer") {
             addEngineer();
         }
-        else if (answers.roleInquiry === "Intern") {
+        else if (answers.Role === "Intern") {
             addIntern();
         } else {
             displayTeam(render(employeeList));
