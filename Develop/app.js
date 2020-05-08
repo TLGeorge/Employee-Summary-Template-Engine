@@ -69,7 +69,7 @@ const engineerInfo = [
     },
     {
         type: "input",
-        name: "GitHubUsername",
+        name: "github",
         message: "Please enter the engineer's GitHub Username."
     }
 ]
@@ -127,7 +127,7 @@ function addManager() {
 // Ask engineer questions and create engineer
 function addEngineer() {
     inquirer.prompt(engineerInfo).then(function (answers) {
-        const newEng = new Engineer(answers.name, answers.ID, answers.Email, answers.GitHubUsername);
+        const newEng = new Engineer(answers.name, answers.ID, answers.Email, answers.github);
         employeeList.push(newEng);
         init();
     })
